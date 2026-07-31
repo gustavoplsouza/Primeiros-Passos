@@ -6,9 +6,9 @@ public class MovimentacaoBancaria {
         String nome;
         String tipoConta;
         int opcao = 0;
-        double saldoInicial;
+        double saldo;
         double saldoRecebido;
-        double tranferencia;
+        double transferencia;
 
         System.out.print("Digite o nome do titular da conta: ");
         nome = leitura.nextLine();
@@ -23,7 +23,7 @@ public class MovimentacaoBancaria {
         System.out.println("Dados iniciais do cliente:\n");
         System.out.println("Nome: " + nome);
         System.out.println("Tipo de conta: " + tipoConta);
-        System.out.println("Saldo inicial: R$" + saldoInicial);
+        System.out.println("Saldo inicial: R$" + saldo);
         System.out.println("******************************");
 
         String menu = """
@@ -40,22 +40,22 @@ public class MovimentacaoBancaria {
 
             switch (opcao) {
                 case 1:
-                    System.out.println("O valor em saldo é: " + saldoInicial);
+                    System.out.println("O valor em saldo é: " + saldo);
                     break;
                 case 2:
                     System.out.println("Informe o valor recebido: ");
                     saldoRecebido = leitura.nextDouble();
-                    saldoInicial += saldoRecebido;
-                    System.out.println("O saldo atua agoa é: " + saldoInicial);
+                    saldo += saldoRecebido;
+                    System.out.println("O saldo atual agora é: " + saldo);
                     break;
                 case 3:
-                    System.out.println("Informe o valor que deseja transferirir: ");
-                    tranferencia = leitura.nextDouble();
-                    if (tranferencia > saldoInicial){
+                    System.out.println("Informe o valor que deseja transferir: ");
+                    transferencia = leitura.nextDouble();
+                    if (transferencia > saldo) {
                         System.out.println("Essa operação não pode ser realizada, saldo insuficiente");
                     } else {
-                        saldoInicial -= tranferencia;
-                        System.out.println("O valor atual agora é " + saldoInicial);
+                        saldo -= transferencia;
+                        System.out.println("O valor atual agora é " + saldo);
                     }
                     break;
                 case 4:
