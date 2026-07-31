@@ -17,7 +17,7 @@ public class MovimentacaoBancaria {
         tipoConta = leitura.nextLine();
 
         System.out.print("Digite o sando da conta: R$");
-        saldoInicial = leitura.nextDouble();
+        saldo = leitura.nextDouble();
 
         System.out.println("\n******************************");
         System.out.println("Dados iniciais do cliente:\n");
